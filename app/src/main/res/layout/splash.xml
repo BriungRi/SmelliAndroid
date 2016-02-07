@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#d2160065"
+    android:gravity="center_horizontal|fill_vertical">
+
+    <TextView
+        android:id="@+id/tvSmelli"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Smelli"
+        android:textColor="#FFFFFF"
+        android:textSize="90dp"
+        android:layout_gravity="center"
+        android:textIsSelectable="true"
+        android:layout_marginTop="75dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Powered By PunGen(t)erator"
+        android:id="@+id/tvPoweredBy"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/tvSmelli"
+        android:layout_alignStart="@+id/tvSmelli"
+        android:textStyle="italic" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Made by Brian Li"
+        android:id="@+id/tvMadeBy"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        android:textStyle="italic"
+        android:layout_below="@+id/tvPoweredBy"
+        android:layout_alignLeft="@+id/tvPoweredBy"
+        android:layout_alignStart="@+id/tvPoweredBy" />
+
+</RelativeLayout>

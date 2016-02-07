@@ -18,7 +18,6 @@
         android:layout_alignLeft="@+id/bGenerate"
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/bGenerate"
-
         android:layout_marginTop="87dp"
         android:editable="true"
         android:textColor="#000000"
