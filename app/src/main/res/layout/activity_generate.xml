@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layout_gravity="center_horizontal"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -17,10 +18,10 @@
         android:layout_alignLeft="@+id/bGenerate"
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/bGenerate"
-        android:layout_marginRight="20dp"
+
         android:layout_marginTop="87dp"
         android:editable="true"
-        android:textColor="#ffffff"
+        android:textColor="#000000"
         android:textColorHint="#707070"
         android:textIsSelectable="false" />
 
@@ -29,10 +30,12 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="160dp"
         android:allowUndo="true"
-        android:text="Generate Pun" />
+        android:text="Generate Pun"
+        android:textColor="#ffffff"
+        android:background="#000000"
+        android:textSize="20dp" />
 
     <TextView
         android:id="@+id/tvSentences"
@@ -42,7 +45,8 @@
         android:layout_below="@+id/bGenerate"
         android:layout_marginBottom="20dp"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="73dp"
+        android:layout_marginTop="30dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="12dp" />
+        android:textSize="18dp"
+        android:textIsSelectable="false" />
 </RelativeLayout>
