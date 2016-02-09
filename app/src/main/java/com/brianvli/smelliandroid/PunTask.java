@@ -1,5 +1,7 @@
 package com.brianvli.smelliandroid;
 
+import android.app.ListActivity;
+import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.util.Log;
 
@@ -9,6 +11,7 @@ import java.net.URL;
 import java.net.URLConnection;
 
 public class PunTask extends AsyncTask<String, Void, String> {
+
     @Override
     protected String doInBackground(String... params) {
         String word = params[0];
@@ -25,7 +28,6 @@ public class PunTask extends AsyncTask<String, Void, String> {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        Log.d("Sentence", output);
         return clean(output);
     }
 

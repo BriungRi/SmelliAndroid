@@ -1,5 +1,6 @@
 package com.brianvli.smelliandroid;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -21,7 +22,7 @@ import java.net.URLConnection;
 
 public class GenerateActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button bGenerate;
+    Button bGenerate, bGood, bBad;
     EditText etWord;
     TextView tvSentences;
     private int intRot = 0;
@@ -32,10 +33,15 @@ public class GenerateActivity extends AppCompatActivity implements View.OnClickL
         setContentView(R.layout.activity_generate);
 
         bGenerate = (Button) findViewById(R.id.bGenerate);
+        bGood = (Button) findViewById(R.id.bGood);
+        bBad = (Button) findViewById(R.id.bBad);
         etWord = (EditText) findViewById(R.id.etWord);
         tvSentences = (TextView) findViewById(R.id.tvSentences);
         etWord.setHint("Enter any word ");
+
         bGenerate.setOnClickListener(this);
+        bGood.setOnClickListener(this);
+        bBad.setOnClickListener(this);
     }
 
     @Override
@@ -49,11 +55,22 @@ public class GenerateActivity extends AppCompatActivity implements View.OnClickL
                         imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
 
                     }
-                    changeButtonColor();
                     tvSentences.setText(new PunTask().execute(etWord.getText().toString()).get());
+                    changeButtonColor();
+
+                    bGood.setEnabled(true);
+                    bBad.setEnabled(true); //make good and bad buttons available after generate is pressed
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+                break;
+            case R.id.bGood: //if good or bad pressed, disable both good and bad buttons
+                bGood.setEnabled(false);
+                bBad.setEnabled(false);
+                break;
+            case R.id.bBad:
+                bGood.setEnabled(false);
+                bBad.setEnabled(false);
                 break;
         }
     }
@@ -88,9 +105,6 @@ public class GenerateActivity extends AppCompatActivity implements View.OnClickL
         }
         intRot++;
         String strColor = "#" + red + green + blue;
-//        int initColor = ((ColorDrawable)bGenerate.getBackground()).getColor();
-//        String hexInitColor = Integer.toHexString(initColor);
-        Log.d("Button Color: ", "" + strColor);
         bGenerate.setBackgroundColor(Color.parseColor(strColor));
     }
 }
