@@ -55,7 +55,9 @@ public class GenerateActivity extends AppCompatActivity implements View.OnClickL
                         imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
 
                     }
-                    tvSentences.setText(new PunTask().execute(etWord.getText().toString()).get());
+                    String[] data = new PunTask().execute(etWord.getText().toString()).get();
+                    Thread.sleep(1000);
+                    tvSentences.setText(data[3]);
                     changeButtonColor();
 
                     bGood.setEnabled(true);
