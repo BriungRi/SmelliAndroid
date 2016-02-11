@@ -15,9 +15,14 @@ public class PunTask extends AsyncTask<String, Void, ArrayList<String>>{
     @Override
     protected ArrayList<String> doInBackground(String... params) {
         String word = params[0];
+        int mode = (int)(Math.random() * 2);
         String output = "";
         try {
-            String url = "http://brianvli.com:5000/punengine/api/v1.0/" + word;
+            String url;
+            if(mode == 0)
+                url = "http://brianvli.com:5000/punengine/api/v1.0/" + word;
+            else
+                url = "http://brianvli.com:5000/punengine/api/v1.1/" + word;
             URLConnection uc = new URL(url).openConnection();
             BufferedReader br = new BufferedReader(new InputStreamReader(uc.getInputStream(), "UTF-8"));
             String s;
